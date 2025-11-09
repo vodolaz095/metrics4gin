@@ -10,6 +10,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// InjectMiddleware injects middleware into gin.Engine that counts requests
 func (h *Handler) InjectMiddleware(engine *gin.Engine) {
 	engine.Use(func(c *gin.Context) {
 		span := trace.SpanFromContext(c.Request.Context())

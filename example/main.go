@@ -63,7 +63,7 @@ func main() {
 		c.Redirect(http.StatusFound, "/")
 	})
 	// expose prometheus/victoria metrics compatible scrapper endpoint
-	engine.GET("/metrics", metricsHandler.ExposeMetrics)
+	engine.GET(metrics4gin.DefaultMetricsEndpointRelativePath, metricsHandler.ExposeMetrics)
 
 	// starting application goroutines
 	listener, err := net.Listen("tcp", "0.0.0.0:3000")

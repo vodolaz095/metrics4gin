@@ -3,13 +3,13 @@ package metrics4gin
 import (
 	"context"
 	"fmt"
-	"net/http"
 	"strings"
 	"time"
 
 	"github.com/VictoriaMetrics/metrics"
 )
 
+// StartPushing starts pushing metrics into Victoria/Prometheus
 func (h *Handler) StartPushing(ctx context.Context, interval time.Duration) error {
 	labels := make([]string, len(h.ExtraLabels))
 	headers := make([]string, len(h.ExtraHeaders))
@@ -27,8 +27,7 @@ func (h *Handler) StartPushing(ctx context.Context, interval time.Duration) erro
 		ExtraLabels:        strings.Join(labels, ","),
 		Headers:            headers,
 		DisableCompression: false,
-		Method:             http.MethodGet,
+		Method:             h.Method,
 	}
-
 	return h.MetricSet.InitPushWithOptions(ctx, h.Endpoint, interval, &opts)
 }
