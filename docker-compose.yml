@@ -1,0 +1,13 @@
+version: "3.8"
+
+volumes:
+  victoria-metrics-data:
+
+services:
+  # https://hub.docker.com/r/victoriametrics/victoria-metrics
+  victoria:
+    image: mirror.gcr.io/victoriametrics/victoria-metrics:v1.118.0-scratch
+    ports:
+      - "8428:8428"
+    volumes:
+      - victoria-metrics-data:/victoria-metrics-data
