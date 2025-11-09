@@ -77,9 +77,13 @@ func main() {
 	eg.Go(func() error {
 		return engine.RunListener(listener)
 	})
-
 	eg.Go(func() error {
+		// push only metrics from set of metricsHandler.MetricSet
 		return metricsHandler.StartPushing(ctx, 10*time.Second)
+	})
+	eg.Go(func() error {
+		// push default metrics, including runtime, if enabled
+		return metricsHandler.StartPushingDefaultMetrics(ctx, 10*time.Second)
 	})
 	err = eg.Wait()
 	if err != nil {

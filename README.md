@@ -42,12 +42,13 @@ func main() {
 
 	// tune metrics handler by setting parameters
 	metricsHandler.Endpoint = metrics4gin.DefaultEndpoint
-	// enable sending default golang runtime metrics
+	// enable exposing default golang runtime metrics on scrapper endpoint
 	metricsHandler.ExposeRuntimeMetrics = true
 	// headers to be send with every request for pushing data in Victoria Metrics/Prometheus
 	metricsHandler.ExtraHeaders["Authorization"] = "Basic dGVzdDp0ZXN0Cg==" // test:test
 	// extra labels to be added to all metrics send to Victoria Metrics/Prometheus
 	metricsHandler.ExtraLabels["job"] = "example_metrics4gin"
+	metricsHandler.ExtraLabels["instance"] = "server.local"
 	
 	// expose prometheus compatible scrapper endpoint
 	engine.GET("/metrics", metricsHandler.ExposeMetrics) 
