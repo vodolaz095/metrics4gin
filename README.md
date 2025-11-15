@@ -49,6 +49,12 @@ func main() {
 	// extra labels to be added to all metrics send to Victoria Metrics/Prometheus
 	metricsHandler.ExtraLabels["job"] = "example_metrics4gin"
 	metricsHandler.ExtraLabels["instance"] = "server.local"
+
+	// inject middleware into gin engine
+	metricsHandler.InjectMiddleware(engine)
+
+    // expose other endpoints
+    // ...
 	
 	// expose prometheus compatible scrapper endpoint
 	engine.GET("/metrics", metricsHandler.ExposeMetrics) 
