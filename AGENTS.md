@@ -100,7 +100,7 @@ go handler.StartPushing(context.Background(), 10*time.Second)
 ## Code Style Patterns
 
 ### Go version
-- Go 1.24.9 (as declared in `go.mod`)
+- Go 1.26 (as declared in `go.mod`)
 - Uses go modules (not GOPATH mode)
 
 ### Package organization
@@ -130,10 +130,10 @@ func main() {
 ## Dependencies
 
 Key dependencies:
-- `github.com/gin-gonic/gin` v1.11.0 - Gin web framework
-- `github.com/VictoriaMetrics/metrics` v1.40.2 - Metrics collection library
-- `go.opentelemetry.io/otel` v1.38.0 and v1.38.0 (trace) - OpenTelemetry for distributed tracing
-- `golang.org/x/sync` v0.17.0 - Context synchronization utilities
+- `github.com/gin-gonic/gin` v1.12.0 - Gin web framework
+- `github.com/VictoriaMetrics/metrics` v1.44.0 - Metrics collection library
+- `go.opentelemetry.io/otel` v1.45.0 and v1.45.0 (trace) - OpenTelemetry for distributed tracing
+- `golang.org/x/sync` v0.22.0 - Context synchronization utilities
 
 ## Common Gotchas
 
