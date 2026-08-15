@@ -33,7 +33,7 @@ func NewWithEmptyMetricsSet() *Handler {
 		ExtraLabels:          make(map[string]string, 0),
 		ExtraHeaders:         make(map[string]string, 0),
 		Endpoint:             DefaultEndpoint,
-		Method:               http.MethodGet,
+		Method:               http.MethodPost,
 	}
 }
 
@@ -45,6 +45,6 @@ func NewWithDefaultMetricsSet() *Handler {
 		ExtraLabels:          make(map[string]string, 0),
 		ExtraHeaders:         make(map[string]string, 0),
 		Endpoint:             DefaultEndpoint,
-		Method:               http.MethodGet,
+		Method:               http.MethodPost,
 	}
 }
