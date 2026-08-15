@@ -2,8 +2,6 @@ Metrics for Gin
 ==========================
 
 [![PkgGoDev](https://pkg.go.dev/badge/github.com/vodolaz095/metrics4gin)](https://pkg.go.dev/github.com/vodolaz095/metrics4gin?tab=doc)
-[![Go Report Card](https://goreportcard.com/badge/github.com/vodolaz095/metrics4gin)](https://goreportcard.com/report/github.com/vodolaz095/metrics4gin)
-
 
 Metric Middleware for [gin](https://github.com/gin-gonic/gin/) framework with request counters
 for Prometheus/Victoria Metrics time-series databases.

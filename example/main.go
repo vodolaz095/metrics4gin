@@ -38,6 +38,7 @@ func main() {
 	metricsHandler.ExposeRuntimeMetrics = true
 	metricsHandler.ExtraHeaders["Authorization"] = "Basic dGVzdDp0ZXN0Cg==" // test:test
 	metricsHandler.ExtraLabels["job"] = "example_metrics4gin"
+	metricsHandler.Method = http.MethodPost // but can be http.MethodGet
 
 	// inject middleware into gin engine
 	metricsHandler.InjectMiddleware(engine)
