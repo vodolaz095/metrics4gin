@@ -49,6 +49,8 @@ func main() {
 	// extra labels to be added to all metrics send to Victoria Metrics/Prometheus
 	metricsHandler.ExtraLabels["job"] = "example_metrics4gin"
 	metricsHandler.ExtraLabels["instance"] = "server.local"
+	// usually, victoria metrics expects POST requests for accepting metrics, but it can be changed to GET
+	metricsHandler.Method = http.MethodPost 
 
 	// inject middleware into gin engine
 	metricsHandler.InjectMiddleware(engine)
