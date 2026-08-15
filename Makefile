@@ -24,7 +24,8 @@ lint:
 tools:
 	which go
 	which golint # go install golang.org/x/lint/golint@latest
-	which govulncheck # go install honnef.co/go/tools/cmd/staticcheck@latest
+	which govulncheck # go install golang.org/x/vuln/cmd/govulncheck@latest
+	which staticcheck # go install honnef.co/go/tools/cmd/staticcheck@latest
 
 deps:
 	go mod verify
