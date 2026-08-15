@@ -141,8 +141,7 @@ Key dependencies:
 2. **Push URL must be accessible**: Ensure target VictoriaMetrics/Prometheus endpoint allows remote connections and CORS if needed.
 3. **Headers must be base64 encoded**: `ExtraHeaders` uses HTTP Basic Authentication format.
 4. **Runtime metrics are exposed at `/metrics`**: Default exposed at `http://localhost:3000/metrics` if `ExposeRuntimeMetrics=true`
-5. **Push method default is GET**: `Method` defaults to `http.MethodGet`, but VictoriaMetrics typically uses POST
-6. **ExtraHeaders/ExtraLabels require non-nil maps**: Using empty `make(map[string]string, 0)` is acceptable, but zero maps may cause failures
+5. **ExtraHeaders/ExtraLabels require non-nil maps**: Using empty `make(map[string]string, 0)` is acceptable, but zero maps may cause failures
 
 ## File Structure
 
